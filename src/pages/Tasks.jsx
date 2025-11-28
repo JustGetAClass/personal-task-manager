@@ -1,13 +1,34 @@
-import AddTodo from "../components/AddTodo";
+import { useState } from "react";
+import { useTaskStore } from "../store/taskStore";
 import TodoList from "../components/TodoList";
+import AddTodo from "../components/AddTodo";
 
 export default function Tasks() {
-	return (
-		<div className="mx-auto max-w-2xl">
-			<h1 className="mb-4 text-2xl font-bold">Tasks</h1>
+	const allTasks = useTaskStore((state) => state.tasks);
+	const searchTasks = useTaskStore((state) => state.searchTasks);
 
+	const [query, setQuery] = useState("");
+
+	// Filter tasks based on search query
+	const filteredTasks = query ? searchTasks(query) : allTasks;
+
+	return (
+		<div>
+			<h1 className="mb-4 text-2xl font-bold">All Tasks</h1>
+			{/* Search Input */}
+			<input
+				type="text"
+				placeholder="Search tasks..."
+				value={query}
+				onChange={(e) => setQuery(e.target.value)}
+				className="mb-4 w-full rounded-lg border border-gray-300 p-3 outline-none focus:ring-2 focus:ring-blue-400"
+			/>
+
+			{/* Add Task Form */}
 			<AddTodo />
-			<TodoList />
+
+			{/* Render Task List */}
+			<TodoList tasks={filteredTasks} />
 		</div>
 	);
 }

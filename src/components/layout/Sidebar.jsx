@@ -3,14 +3,16 @@ import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
 	return (
-		<div className="flex h-full w-64 flex-col bg-gray-900 p-4 text-white dark:bg-gray-800 dark:text-gray-100">
-			<h1 className="mb-8 text-xl font-bold">Task Manager</h1>
+		<div className="flex h-full w-64 flex-col bg-gray-900 p-6 text-white">
+			<h1 className="mb-8 text-2xl font-bold tracking-wide">
+				Task Manager
+			</h1>
 
 			<nav className="flex flex-col gap-4">
 				<NavLink
 					to="/"
 					className={({ isActive }) =>
-						`flex items-center gap-3 rounded-md p-2 ${
+						`flex items-center gap-3 rounded-lg p-3 transition ${
 							isActive ? "bg-gray-700" : "hover:bg-gray-800"
 						}`
 					}
@@ -21,18 +23,18 @@ export default function Sidebar() {
 				<NavLink
 					to="/tasks"
 					className={({ isActive }) =>
-						`flex items-center gap-3 rounded-md p-2 ${
+						`flex items-center gap-3 rounded-lg p-3 transition ${
 							isActive ? "bg-gray-700" : "hover:bg-gray-800"
 						}`
 					}
 				>
-					<ListTodo size={20} /> Task
+					<ListTodo size={20} /> Tasks
 				</NavLink>
 
 				<NavLink
 					to="/settings"
 					className={({ isActive }) =>
-						`flex items-center gap-3 rounded-md p-2 ${
+						`flex items-center gap-3 rounded-lg p-3 transition ${
 							isActive ? "bg-gray-700" : "hover:bg-gray-800"
 						}`
 					}
