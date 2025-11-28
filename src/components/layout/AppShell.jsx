@@ -1,18 +1,18 @@
-import Sidebar from "../Sidebar";
-import Navbar from "../Navbar";
+import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
 
 export default function AppShell({ children }) {
-  return (
-    <div className="flex h-screen w-full">
-      <Sidebar />
+	return (
+		<div className="flex h-screen w-full">
+			<Sidebar />
 
-      <div className="flex-1 flex flex-col">
-        <Navbar />
+			<div className="flex flex-1 flex-col">
+				<Navbar />
 
-        <main className="p-6 overflow-auto bg-gray-50 h-full">
-          {children}
-        </main>
-      </div>
-    </div>
-  );
+				<main className="h-full overflow-auto bg-gray-50 p-6">
+					{children}
+				</main>
+			</div>
+		</div>
+	);
 }
