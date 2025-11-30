@@ -24,7 +24,7 @@ export default function AddTodo() {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="flex flex-col gap-3 rounded-md bg-white p-4 shadow-sm w-300 m-auto"
+			className="m-auto flex w-300 flex-col gap-3 rounded-md bg-white p-4 shadow-sm"
 		>
 			<input
 				type="text"

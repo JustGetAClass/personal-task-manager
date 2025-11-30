@@ -1,4 +1,4 @@
-import cat from "../../assets/cat.jpeg"
+import cat from "../../assets/cat.jpeg";
 
 export default function Navbar() {
 	return (
