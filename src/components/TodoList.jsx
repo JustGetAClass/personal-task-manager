@@ -31,7 +31,6 @@ export default function TodoList({ tasks }) {
 					key={task.id}
 					className={`flex items-start rounded-lg border p-4 shadow transition ${task.completed ? "border-gray-200 bg-gray-100" : "border-gray-300 bg-white"} hover:shadow-md`}
 				>
-					{/* Checkbox on the far left */}
 					<input
 						type="checkbox"
 						checked={task.completed}
@@ -39,7 +38,6 @@ export default function TodoList({ tasks }) {
 						className="mt-1 mr-4 h-5 w-5 accent-blue-500"
 					/>
 
-					{/* Task content */}
 					<div className="flex-1">
 						{editingTask === task.id ? (
 							<>
@@ -109,7 +107,6 @@ export default function TodoList({ tasks }) {
 						)}
 					</div>
 
-					{/* Action buttons on the right */}
 					<div className="ml-4 flex items-start gap-2">
 						{editingTask !== task.id && (
 							<>

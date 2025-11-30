@@ -9,13 +9,11 @@ export default function Tasks() {
 
 	const [query, setQuery] = useState("");
 
-	// Filter tasks based on search query
 	const filteredTasks = query ? searchTasks(query) : allTasks;
 
 	return (
 		<div>
 			<h1 className="mb-4 text-2xl font-bold">All Tasks</h1>
-			{/* Search Input */}
 			<input
 				type="text"
 				placeholder="Search tasks..."
@@ -24,10 +22,8 @@ export default function Tasks() {
 				className="mb-4 w-full rounded-lg border border-gray-300 p-3 outline-none focus:ring-2 focus:ring-blue-400"
 			/>
 
-			{/* Add Task Form */}
 			<AddTodo />
 
-			{/* Render Task List */}
 			<TodoList tasks={filteredTasks} />
 		</div>
 	);
